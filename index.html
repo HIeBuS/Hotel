@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Royal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="simple-lightbox.css" />
+</head>
+
+<body>
+    <div id="main">
+
+        <div class="main_content">Royal Hotel</div>
+        <a href="#reservation"><input class="show_offer" type="button" value="Poznaj Ofertę"/></a>
+        <div id="about_us" onclick="zmianaAboutUs();"><i class="icon-user"></i>O nas</div>
+        <div id="about_us_tile"><h2 class="h2_heading">O nas</h2> <p class="close_about_us" onclick="zmianaAboutUs();">X</p> <p class="about_us_text">Jesteśmy luksusowym, <b style="color: #181a45;">nowoczesnym hotelem w centrum Białegostoku.</b> Wewnątrz jest <b style="color: #181a45;">schludnie, pokoje są przestronne</b> i z pewnością zaznasz tam odpoczynku. W wyposażeniu jest <b style="color: #181a45;"> basen, siłownia i miejsca zabaw dla dzieci</b> a niemal z każdego balkonu można dojrzeć słoneczną, piaszczystą plażę. </p> <br><br> <p class="adress_text"><b style="color: #181a45;">Adres:</b> <b style="color: #181a45; text-shadow: 2px 2px #c2af78">Złota 7</b></p> <br><br> <p class="phone_text"><b style="color: #181a45;">Telefon:</b> <b style="color: #181a45; text-shadow: 2px 2px #c2af78">+48 744 28 20 34</b></p> <br><br> <p class="rate"><b style="color: #181a45; padding-right: 7px;">Ocena klientów:</b><progress value="4.3" max="5">4.3/5</progress></p>  <br><br> <p class="invitation">Zapraszamy do skorzystania <br>z naszej oferty!</p> </div>
+        <a href="#gallery"><div class="gallery"><i class="icon-picture"></i>Galeria</div></a>
+        <div class="coat_of_arms" alt="coat of arms"><a href="https://www.bialystok.pl/" target="blank"><img src="img/coat_of_arms.png" alt="Bialystok" width="102px" height="70px"></a></div>
+        <div class="pl_flag" alt="pl_PL"><img src="img/pl.png" width="38px" height="24px" title="pl_PL"></div>
+        <div class="en_flag" alt="en-EN"><img src="img/en.png" width="38px" height="24px" title="en-EN"></div>
+        <div class="slide show" style="background-image: url('img/1.jpg');"></div>
+        <div class="slide" style="background-image: url('img/2.jpg');"></div>
+
+        <div class="slide" style="background-image: url('img/3.jpg');"></div>
+        <div class="slide" style="background-image: url('img/4.jpg');"></div>
+        <div class="slide" style="background-image: url('img/5.jpg');"></div>  
+        <div class="slide" style="background-image: url('img/6.jpg');"></div>
+        <div class="slide" style="background-image: url('img/7.jpg');"></div>
+        <div class="slide" style="background-image: url('img/8.jpg');"></div>
+    </div>
+
+    <div id="reservation">
+        <h1 class="h1_heading">Rezerwacja pokoi hotelowych</h1>
+
+            <table align="center" class="rooms">
+                <tr>    
+                    <td class="room" id="room1" onclick="showRoomDetails('1');"></td>
+                    <td class="room" id="room2" onclick="showRoomDetails('2');"></td>
+                    <td class="room" id="room3" onclick="showRoomDetails('3');"></td>
+                    <td class="room" id="room4" onclick="showRoomDetails('4');"></td> 
+    
+                <tr>
+                    <td class="room" id="room5" onclick="showRoomDetails('5');"></td>
+                    <td class="room" id="room6" onclick="showRoomDetails('6');"></td>
+                    <td class="room" id="room7" onclick="showRoomDetails('7');"></td>
+                    <td class="room" id="room8" onclick="showRoomDetails('8');"></td>
+                </tr>
+    
+                <tr>
+                    <td class="room" id="room9" onclick="showRoomDetails('9');"></td>
+                    <td class="room" id="room10" onclick="showRoomDetails('10');"></td>
+                    <td class="room" id="room11" onclick="showRoomDetails('11');"></td>
+                    <td class="room" id="room12" onclick="showRoomDetails('12');"></td>
+                </tr>
+            </table>
+
+            <center>
+            <p id="FromWhenText">Od kiedy:</p>
+            <input type="date" class="DateFromWhen">
+            <p id="ToWhenText">Do kiedy:</p>
+            <input type="date" class="DateToWhen">
+            <input type="submit" value="Sprawdź" class="check_button" onclick="showSearchResults();">
+            </center>
+        
+    </div>
+
+    <div id="search_results">
+        <h2 id="roomDetailsText">Szczegóły pokoju</h2>
+        <center><div id="roomDetails">
+            <div id="roomImg"><p id="imgText" style="text-align: center; margin-top: 44px;">Tu pojawi się zdjęcie</p></div> 
+            <p class="close_search_results" onclick="zmianaSearchResults();">X</p>
+            <p style="margin-top: 4px;"><strong id="nazwa">Nazwa Pokoju <p id="star" style="margin-top: -38px; position: absolute; margin-left: 340px;">⭐⭐⭐</p></strong></p>
+            <hr style="height: 0.5px; background-color: #181a45; margin-top: -12px;">
+            <p style="margin-top: 10px; margin-left: -40px;"><strong id="liczba_os">liczba osób</strong></p>
+            <p style="padding-left: -30px;"><strong id="cena">cena</strong></p>
+            <div id="rating">0,0</div>
+            <p style="position: absolute; font-size: 18px; margin-top: -114px; margin-left: 144px;">👍</p>
+            <hr style="height: 0.5px; background-color: #181a45;">
+            <p style="margin-top: -8px;"><strong>Status: <em style="color: #328046;">wolny</em></strong></p>
+        </div></center>
+
+        <form id="ContactForm">
+            <h2 id="ContactFormHeader">Formularz kontaktowy</h2>
+            <p id="ContactFormText1">Imię:</p> <input id="contact_field1" type="text">
+            <p id="ContactFormText2">Nazwisko:</p> <input id="contact_field2" type="text">
+            <p id="ContactFormText3">E-mail:</p> <input id="contact_field3" type="text">
+            <p id="ContactFormText4">Adres:</p> <input id="contact_field4" type="text">
+            <p id="ContactFormText5">Kod Pocztowy:</p> <input id="contact_field5" type="text">
+            <p id="ContactFormText6">Miasto</p> <input id="contact_field6" type="text">
+            <p id="ContactFormText7">Nr. tel.</p> <input id="contact_field7" type="text">
+            <input id="checkComments" type="checkbox" onclick="disableInput();"> <p id="comments">Mam uwagi do rezerwacji</p>
+            <input id="comments_field" type="text" placeholder="Tutaj wprowadź uwagi...">
+            <input type="button" value="Rezerwuj" class="book_button">
+        </form>
+    </div>
+
+    <div id="gallery">
+        <h1 class="gallery_heading">galeria</h1>
+        <a href="img/gallery/1.jpg" class="big"><img src="img/gallery/1.jpg" style="width: 280px; height: 130px; position: absolute; margin-left: 12px; margin-top: -4px; border: 2px ridge #c2af78;"/></a>
+        <a href="img/gallery/2.jpg"><img src="img/gallery/2.jpg" style="width: 258px; height: 105px; position: absolute; margin-left: 24px; margin-top: 144px; border: 2px dashed #c2af78;"/></a>
+        <a href="img/gallery/3.jpg"><img src="img/gallery/3.jpg" style="width: 340px; height: 247px; position: absolute; margin-left: 312px; margin-top: 10px; border: 2px solid #c2af78;"/></a>
+        <a href="img/gallery/4.jpg"><img src="img/gallery/4.jpg" style="width: 150px; height: 112px; position: absolute; margin-left: 192px; margin-top: 304px; border: 2px inset #c2af78;"/></a>
+        <a href="img/gallery/5.jpg"><img src="img/gallery/5.jpg" style="width: 150px; height: 112px; position: absolute; margin-left: 192px; margin-top: 454px; border: 2px outset #c2af78;"/></a>
+        <a href="img/gallery/6.jpg"><img src="img/gallery/6.jpg" style="width: 400px; height: 196px; position: absolute; margin-left: 362px; margin-top: 272px; border: 2px groove #c2af78;"/></a>
+        <a href="img/gallery/7.jpg"><img src="img/gallery/7.jpg" style="width: 280px; height: 210px; position: absolute; margin-left: 668px; margin-top: 28px; border: 2px dashed #c2af78;"/></a>
+        <a href="img/gallery/8.jpg"><img src="img/gallery/8.jpg" style="width: 160px; height: 106px; position: absolute; margin-left: 792px; margin-top: 264px; border: 2px solid #c2af78;"/></a>
+        <a href="img/gallery/9.jpg"><img src="img/gallery/9.jpg" style="position: absolute; margin-left: 978px; margin-top: 116px; border: 2px dotted #c2af78;"/></a>
+        <a href="img/gallery/10.jpg"><img src="img/gallery/10.jpg" style="width: 200px; height: 170px; position: absolute; margin-left: 788px; margin-top: 396px; border: 2px outset #c2af78;"/></a>
+        <a href="img/gallery/11.jpg"><img src="img/gallery/11.jpg" style="width: 180px; height: 110px; position: absolute; margin-left: 1012px; margin-top: 364px; border: 2px inset #c2af78;"/></a>
+        <a href="img/gallery/12.jpg"><img src="img/gallery/12.jpg" style="width: 230px; height: 120px; position: absolute; margin-left: 966px; margin-top: -18px; border: 2px solid #c2af78;"/></a>
+        <a href="img/gallery/13.jpg"><img src="img/gallery/13.jpg" style="width: 254px; height: 136px; position: absolute; margin-left: 1224px; margin-top: 2px; border: 2px dashed #c2af78;"/></a>
+        <a href="img/gallery/14.jpg"><img src="img/gallery/14.jpg" style="width: 254px; height: 136px; position: absolute; margin-left: 1234px; margin-top: 154px; border: 2px dotted #c2af78;"/></a>
+        <a href="img/gallery/15.jpg"><img src="img/gallery/15.jpg" style="width: 252px; height: 106px; position: absolute; margin-left: 1018px; margin-top: 495px; border: 2px outset #c2af78;"/></a>
+        <a href="img/gallery/16.jpg"><img src="img/gallery/16.jpg" style="width: 160px; height: 136px; position: absolute; margin-left: 1214px; margin-top: 316px; border: 2px solid #c2af78;"/></a>
+        <a href="img/gallery/17.jpg"><img src="img/gallery/17.jpg" style="width: 110px; height: 164px; position: absolute; margin-left: 1390px; margin-top: 307px; border: 2px dashed #c2af78;"/></a>
+        <a href="img/gallery/18.jpg"><img src="img/gallery/18.jpg" style="position: absolute; margin-left: 14px; margin-top: 1818px; z-index: 1; top: 0; left: 0; border: 2px groove #c2af78;"/></a>
+        <a href="img/gallery/19.jpg"><img src="img/gallery/19.jpg" style="width: 170px; height: 140px; position: absolute; margin-left: 1300px; margin-top: 2034px; z-index: 1; top: 0; left: 0; border: 2px dotted #c2af78;"/></a>
+        <a href="img/gallery/20.jpg"><img src="img/gallery/20.jpg" style="width: 400px; height: 128px; position: absolute; margin-left: 362px; margin-top: 482px; border: 2px solid #c2af78;"/></a>
+        <div class="clear"></div>
+    </div>
+
+    <script src="simple-lightbox.js"></script>
+    <script>
+        (function() {
+            var $gallery = new SimpleLightbox('#gallery a', {});
+        })();
+    </script>
+
+    <div id="footer">Stronę wykonali: <strong>Jakub Hlebowicz</strong> (strona) i <strong>Szymon Szugzda</strong> (baza danych) <p style="margin-left: 1200px; margin-top: -18px;">&copy Wszelkie prawa zastrzeżone</p></div>
+</body>
+</html>
